@@ -15,8 +15,6 @@ class Logout extends CI_Controller {
 		$sess_data = array(
 			'diviverse_user_name'=>'',
 			'diviverse_user_id'=>'',		
-			'diviverse_user_department_name'=>'',				
-			'diviverse_user_plant_name'=>'',			
 			'diviverse_user_logged_in'=>false
 		);
 		$this->session->set_userdata($sess_data);

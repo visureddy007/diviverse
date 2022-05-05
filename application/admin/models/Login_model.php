@@ -24,10 +24,8 @@ class Login_model extends CI_Model{
 	
 	public function verify($uname)
 	{
-		$sql = "SELECT u.*,d.id as department_id ,d.name AS department_name,p.name AS plant_name ,p.id as plant_id
+		$sql = "SELECT u.*
 				FROM $this->tbl_name AS u
-				LEFT JOIN ".DEPARTMENT_TBL." AS d ON u.department_id=d.id 	
-				LEFT JOIN ".PLANTS_TBL." AS p ON u.plant_id=p.id 	
 				WHERE u.mobile = '$uname' ";
 		$query = $this->db->query($sql);
 		return $query->result_array();

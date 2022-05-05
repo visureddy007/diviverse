@@ -29,53 +29,5 @@ function success_msg($msg){
 									</div>';
 }
 
-function timezonesList(){
-	$zones = timezone_identifiers_list();
-    $timezones=array();
-	foreach ($zones as $zone)
-	{
-		$zone = explode('/', $zone); // 0 => Continent, 1 => City
-	   
-		// Only use "friendly" continent names
-		if ($zone[0] == 'Africa' || $zone[0] == 'America' || $zone[0] == 'Antarctica' || $zone[0] == 'Arctic' || $zone[0] == 'Asia' || $zone[0] == 'Atlantic' || $zone[0] == 'Australia' || $zone[0] == 'Europe' || $zone[0] == 'Indian' || $zone[0] == 'Pacific')
-		{       
-			if (isset($zone[1]) != '')
-			{
-				$timezones[$zone[0]][$zone[0]. '/' . $zone[1]] = str_replace('_', ' ', $zone[1]); // Creates array(DateTimeZone => 'Friendly name')
-			}
-		}
-	}
-	return $timezones;
-}
-
-function getDurations(){
-	return array(
-			'15'=>'15 Min',
-			'30'=>'30 Min',
-			'45'=>'45 Min',
-			'60'=>'60 Min',
-		);
-}
-
-function cleanString($string) {
-   $string = str_replace(' ', '-', $string); /* // Replaces all spaces with hyphens. */
-
-   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); /* // Removes special chars. */
-}
-
-function validate_phone_number($phone)
-{
-     /* // Allow +, - and . in phone number */
-     $filtered_phone_number = filter_var($phone, FILTER_SANITIZE_NUMBER_INT);
-     // Remove "-" from number
-     $phone_to_check = str_replace("-", "", $filtered_phone_number);
-     // Check the lenght of number
-     // This can be customized if you want phone number from a specific country
-     /* if (strlen($phone_to_check) < 10 || strlen($phone_to_check) > 14) { */
-     if (strlen($phone_to_check) < 10) {
-        return false;
-     } else {
-       return true;
-     }
 }
 	

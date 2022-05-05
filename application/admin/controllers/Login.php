@@ -45,11 +45,6 @@ class Login extends CI_Controller {
 							$sess_data = array(					
 								'diviverse_user_name'=>$name,
 								'diviverse_user_id'=>$user_id,				
-								'diviverse_user_role'=>$user['role'],				
-								'diviverse_user_department_name'=>$user['department_name'],				
-								'diviverse_user_department_id'=>$user['department_id'],				
-								'diviverse_user_plant_name'=>$user['plant_name'],				
-								'diviverse_user_plant_id'=>$user['plant_id'],				
 								'diviverse_user_logged_in'=>true
 							);
 							$this->session->set_userdata($sess_data);

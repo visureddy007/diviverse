@@ -15,6 +15,15 @@
 				<li>
 					<a href="<?= base_url('Category') ?>" class="waves-effect"><i class="mdi mdi-sitemap"></i><span> Category </span></a>
 				</li>
+				<li>
+					<a href="<?= base_url('Font') ?>" class="waves-effect"><i class="mdi mdi-sitemap"></i><span> Font </span></a>
+				</li>
+				<li>
+					<a href="<?= base_url('Color') ?>" class="waves-effect"><i class="mdi mdi-sitemap"></i><span> Color Palette </span></a>
+				</li>
+				<li>
+					<a href="<?= base_url('Industry') ?>" class="waves-effect"><i class="mdi mdi-sitemap"></i><span> Industry</span></a>
+				</li>
               </ul>
 
         </div>
